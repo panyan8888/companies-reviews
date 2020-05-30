@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "panyan8888@gmail.com",
+      "password": "111111",
+      "username": "panyan88",
+      "role": 1,
+      "address": null,
+      "name": null,
+      "category": null,
+      "product": null
+    },
+    {
+      "id": 2,
+      "email": "pan8888@gmail.com",
+      "password": "111111",
+      "username": "panyan888",
+      "role": 2,
+      "address": null,
+      "name": null,
+      "category": null,
+      "product": null
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "userId": 1,
+      "companyId": 2,
+      "review": "text",
+      "score": 5
+    }
+  ]
+}
