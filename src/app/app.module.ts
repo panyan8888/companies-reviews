@@ -16,6 +16,7 @@ import { ReviewItemComponent } from './components/review-item/review-item.compon
 import { ReviewModalComponent } from './components/review-modal/review-modal.component';
 import {defaultSimpleModalOptions, SimpleModalModule} from "ngx-simple-modal";
 import { SimpleUserItemComponent } from './components/simple-user-item/simple-user-item.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SimpleUserItemComponent } from './components/simple-user-item/simple-us
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     SimpleModalModule.forRoot({container: document.body}, {
       ...defaultSimpleModalOptions,
       closeOnEscape: true,

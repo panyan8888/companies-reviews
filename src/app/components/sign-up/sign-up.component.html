@@ -9,7 +9,8 @@
         <div class="email">
           <input
             required
-            (input) = "onChangeEmail($event.target.value)"
+            [(ngModel)]="userData.email"
+            name="email"
             class="form-control email-input"
             type="text"
             placeholder="Email">
@@ -19,7 +20,8 @@
         <div class="password">
           <input
             required
-            (input) = "onChangePassword($event.target.value)"
+            [(ngModel)]="userData.password"
+            name="password"
             class="form-control password-input"
             type="password"
             placeholder="Password">
@@ -29,7 +31,8 @@
         <div class="confirm-password">
           <input
             required
-            (input) = "onChangeConfirmPassword($event.target.value)"
+            [(ngModel)]="confpass"
+            name="confpass"
             class="form-control confirm-password-input"
             type="password"
             placeholder="Confirm password">
@@ -39,7 +42,8 @@
         <div class="username">
           <input
             required
-            (input) = "onChangeUsername($event.target.value)"
+            [(ngModel)]="userData.username"
+            name="username"
             class="form-control username-input"
             type="text"
             placeholder="Username">
@@ -48,7 +52,7 @@
         </div>
         <div class="role">
           <label for="role">Role</label>
-          <select (change)= "onChangeRole($event.target.value)"
+          <select [(ngModel)]="userData.role"
                   name="signinType"
                   id="signinType">
             <option [value]="roles.user">User</option>
@@ -59,7 +63,8 @@
         <div *ngIf="showCompanyFields" class="address">
           <input
             required
-            (input) = "onChangeAddress($event.target.value)"
+            [(ngModel)]="companyData.address"
+            name="address"
             class="form-control address-input"
             type="text"
             placeholder="Address">
@@ -69,7 +74,8 @@
         <div *ngIf="showCompanyFields" class="name">
           <input
             required
-            (input) = "onChangeName($event.target.value)"
+            [(ngModel)]="companyData.name"
+            name="name"
             class="form-control name-input"
             type="text"
             placeholder="Name">
@@ -77,17 +83,19 @@
           <span *ngIf="!checkName || emptyNameField" class="error">Name should be at least 4 charachters</span>
         </div>
         <div *ngIf="showCompanyFields" class="category">
-          <select (change)="onChangeCategory($event.target.value)"
-                  name="categoryType"
-                  id="categoryType">
+          <select
+            [(ngModel)]="companyData.category"
+            name="email"
+            id="categoryType">
             <option [value]="categories.IT">IT</option>
             <option [value]="categories.notIT">notIT</option>
           </select>
         </div>
         <div *ngIf="showCompanyFields" class="product">
-          <select (change)="onChangeProduct($event.target.value)"
-                  name="signinType"
-                  id="productType">
+          <select
+            [(ngModel)]="companyData.product"
+            name="emailproduct"
+            id="productType">
             <option [value]="products.ITProduct">ITProduct</option>
             <option [value]="products.notITProduct">notITProduct</option>
           </select>

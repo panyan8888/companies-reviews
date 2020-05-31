@@ -96,7 +96,7 @@
     },
     {
       "email": "hospogh@gmail.com",
-      "password": "111111",
+      "password": null,
       "confpass": "111111",
       "username": "hospogh",
       "role": "User",
@@ -141,6 +141,21 @@
       "category": "IT",
       "product": "ITProduct",
       "id": 13
+    },
+    {
+      "email": "hosss@gmail.com",
+      "password": "111111",
+      "confpass": "111111",
+      "username": "hosss",
+      "role": "User",
+      "id": 14
+    },
+    {
+      "email": "khuaaa@adsfasd.scom",
+      "password": "asdfasdf",
+      "username": "asdfasdfasdf",
+      "role": "User",
+      "id": 15
     }
   ],
   "reviews": [

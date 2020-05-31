@@ -17,7 +17,8 @@
     <span *ngIf="!editable">{{this.authService.user.username}}</span>
     <input
       *ngIf="editable"
-      (input) = "onChangeUsername($event.target.value)"
+      [(ngModel)]="editInfoData.username"
+      name="username"
       class="form-control username-input"
       type="text"
       placeholder="username">
@@ -27,8 +28,8 @@
     <span *ngIf="!editable">{{this.authService.user.role}}</span>
     <select
       *ngIf="editable"
-      (change)= "onChangeRole($event.target.value)"
-      name="signinType"
+      [(ngModel)]="editInfoData.role"
+      name="role"
       id="signinType">
       <option [value]="roles.user">User</option>
       <option [value]="roles.company">Company</option>
@@ -39,7 +40,8 @@
     <span *ngIf="!editable">{{this.authService.user.address}}</span>
     <input
       *ngIf="editable"
-      (input) = "onChangeAddress($event.target.value)"
+      [(ngModel)]="editInfoData.address"
+      name="address"
       class="form-control address-input"
       type="text"
       placeholder="address">
@@ -49,7 +51,8 @@
     <span *ngIf="!editable">{{this.authService.user.name}}</span>
     <input
       *ngIf="editable"
-      (input) = "onChangeName($event.target.value)"
+      [(ngModel)]="editInfoData.name"
+      name="name"
       class="form-control name-input"
       type="text"
       placeholder="name">
@@ -59,8 +62,8 @@
     <span *ngIf="!editable">{{this.authService.user.category}}</span>
     <select
       *ngIf="editable"
-      (change)="onChangeCategory($event.target.value)"
-      name="categoryType"
+      [(ngModel)]="editInfoData.category"
+      name="category"
       id="categoryType">
       <option [value]="categories.IT">IT</option>
       <option [value]="categories.notIT">notIT</option>
@@ -71,8 +74,8 @@
     <span *ngIf="!editable">{{this.authService.user.product}}</span>
     <select
       *ngIf="editable"
-      (change)="onChangeProduct($event.target.value)"
-      name="signinType"
+      [(ngModel)]="editInfoData.product"
+      name="product"
       id="productType">
       <option [value]="products.ITProduct">ITProduct</option>
       <option [value]="products.notITProduct">notITProduct</option>

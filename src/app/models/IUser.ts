@@ -17,7 +17,6 @@ export interface IUser {
   id?: number;
   email: string;
   password: string;
-  confpass: string;
   username: string;
   role?: Role;
   address?: string;

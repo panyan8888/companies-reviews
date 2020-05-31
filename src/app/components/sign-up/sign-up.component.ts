@@ -15,6 +15,8 @@ export class SignUpComponent implements OnInit {
   products = Product;
   categories = Category;
 
+  confpass: string;
+
   emailValidationExpression: string;
   passwordValidationExpression: string;
 
@@ -32,19 +34,19 @@ export class SignUpComponent implements OnInit {
   checkUsername = true;
   checkName = true;
 
-
-  signUpData: IUser = {
+  userData: IUser = {
     email: '',
     password: '',
-    confpass: '',
     username: '',
     role: Role.user,
+  };
+
+  companyData: IUser = {
     name: '',
     address: '',
     category: Category.IT,
     product: Product.ITProduct
-
-  };
+  } as IUser;
 
   constructor(
     private usersService: UsersService,
@@ -58,139 +60,41 @@ export class SignUpComponent implements OnInit {
     this.passwordValidationExpression = '^.{6,}$';
     this.showCompanyFields = false;
   }
-
-  onChangeEmail(searchValue: string) {
-    this.signUpData.email = searchValue;
-  }
-
-  onChangePassword(searchValue: string) {
-    this.signUpData.password = searchValue;
-  }
-
-  onChangeConfirmPassword(searchValue: string) {
-    this.signUpData.confpass = searchValue;
-  }
-
-  onChangeUsername(searchValue: string) {
-    this.signUpData.username = searchValue;
-  }
-
-  onChangeAddress(searchValue: string) {
-    this.signUpData.address = searchValue;
-  }
-
-  onChangeName(searchValue: string) {
-    this.signUpData.name = searchValue;
-  }
-  onChangeRole(searchValue: Role) {
-    this.signUpData.role = searchValue;
-    console.log(this.signUpData.role);
-    if (this.signUpData.role === Role.company) {
-      console.log(this.showCompanyFields);
-      this.showCompanyFields = true;
-    } else {
-      this.showCompanyFields = false;
-    }
-  }
-  onChangeCategory(searchValue: Category) {
-    this.signUpData.category = searchValue;
-  }
-  onChangeProduct(searchValue: Product) {
-    this.signUpData.product = searchValue;
-  }
   keyDownFunction(event) {
     if (event.keyCode === 13) {
       this.signUp();
     }
   }
   signUp(): void {
-
-    if (this.signUpData.email === '') {
-      this.emptyEmailField = true;
-    } else {
-      this.emptyEmailField = false;
-    }
-
-    if (this.signUpData.password === '') {
-      this.emptyPasswordField = true;
-    } else {
-      this.emptyPasswordField = false;
-    }
-    if (this.signUpData.password === this.signUpData.confpass) {
-      this.comparePasswords = true;
-    } else {
-      this.comparePasswords = false;
-    }
-    if (this.signUpData.username === '') {
-      this.emptyUsernameField = true;
-    } else {
-      this.emptyUsernameField = false;
-    }
-    if (this.signUpData.email.match(this.emailValidationExpression)) {
-      this.checkEmail = true;
-    } else {
-      this.checkEmail = false;
-    }
-    if (this.signUpData.password.match(this.passwordValidationExpression)) {
-      this.checkPassword = true;
-    } else {
-      this.checkPassword = false;
-    }
-    if (this.signUpData.username.length > 4) {
-      this.checkUsername = true;
-    } else {
-      this.checkUsername = false;
-    }
-    if (this.signUpData.role === Role.company) {
-      console.log(this.signUpData.name.length);
-      if (this.signUpData.address === '') {
-        this.emptyAddressField = true;
-      } else {
-        this.emptyAddressField = false;
-      }
-      if (this.signUpData.name === '') {
-        this.emptyNameField = true;
-      } else {
-        this.emptyNameField = false;
-      }
-      if (this.signUpData.name.length > 4) {
-        this.checkName = true;
-      } else {
-        this.checkName = false;
-      }
-
-      // if (this.checkEmail && this.checkPassword && this.comparePasswords
-      //   && this.checkUsername && this.checkName && !this.emptyAddressField) {
-      //   console.log(this.signUpData);
-      //   this.usersService.createUser(this.signUpData).subscribe(
-      //     response => {
-      //       console.log('ura');
-      //     }, error => {
-      //       console.log('error');
-      //       if (error.status === 404) {
-      //
-      //       }
-      //     });
-      //   this.authService.loginUser().subscribe(
-      //     response => {
-      //       console.log(response);
-      //       this.usersService.dbData = response;
-      //       for ( let i = 0; i < this.usersService.dbData.length; i++) {
-      //         console.log(this.usersService.dbData);
-      //         this.lastElementId = this.usersService.dbData[this.usersService.dbData.length - 1].id;
-      //       }
-      //     });
-      // }
-
-    }
+    this.validate();
     if ((this.checkEmail && this.checkPassword && this.comparePasswords && this.checkUsername) ||
       (this.checkEmail && this.checkPassword && this.comparePasswords
         && this.checkUsername && this.checkName && !this.emptyAddressField)) {
-      this.usersService.createUser(this.signUpData).subscribe(user => {
+
+      const signUpData = this.userData.role === Role.company
+        ? { ...this.userData, ...this.companyData}
+        : this.userData;
+      this.usersService.createUser(signUpData).subscribe(user => {
         if (user) {
           this.router.navigate(['auth', 'sign-in']);
         }
       });
+    }
+  }
+  validate() {
+    this.emptyEmailField = this.userData.email === '';
+    this.emptyPasswordField = this.userData.password === '';
+
+    this.comparePasswords = this.userData.password === this.confpass;
+    this.emptyUsernameField = this.userData.username === '';
+    this.checkEmail = !!this.userData.email.match(this.emailValidationExpression);
+    this.checkPassword = !!this.userData.password.match(this.passwordValidationExpression);
+    this.checkUsername = this.userData.username.length > 4;
+
+    if (this.userData.role === Role.company) {
+      this.emptyAddressField = this.companyData.address === '';
+      this.emptyNameField = this.companyData.name === '';
+      this.checkName = this.companyData.name.length > 4;
     }
   }
 

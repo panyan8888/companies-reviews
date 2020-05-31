@@ -23,15 +23,7 @@ export class PrifileComponent implements OnInit {
   categories = Category;
 
   editInfoData: IUser = {
-    email: this.authService.user.email,
-    password: this.authService.user.password,
-    confpass: this.authService.user.confpass,
-    username: '',
-    role: Role.user,
-    name: '',
-    address: '',
-    category: Category.IT,
-    product: Product.ITProduct
+    ...this.authService.user,
   };
 
   constructor(
@@ -83,11 +75,7 @@ export class PrifileComponent implements OnInit {
   }
   onChangeRole(searchValue: Role) {
     this.editInfoData.role = searchValue;
-    if (this.editInfoData.role === Role.company) {
-      this.userToCompany = true;
-    } else {
-      this.userToCompany = false;
-    }
+    this.userToCompany = this.editInfoData.role === Role.company;
   }
   onChangeCategory(searchValue: Category) {
     this.editInfoData.category = searchValue;

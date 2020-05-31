@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {IUser, Role} from '../models/IUser';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {switchMap} from "rxjs/operators";
+import {switchMap, tap} from "rxjs/operators";
 import {Observable, throwError} from "rxjs";
 import {AuthService} from "./auth.service";
 import {IReview} from "../models/IReview";
@@ -33,14 +33,8 @@ export class UsersService {
   }
 
   editUserInfo(body: IUser) {
-    return this.client.get(this.baseUrl).pipe(
-      switchMap((allUsers: IUser[]) => {
-
-        return this.client.put(this.baseUrl, {
-          ...body,
-          id: this.authService.user.id
-        });
-      })
+    return this.client.put<IUser>(`${this.baseUrl}/${body.id}`, body).pipe(
+      tap(user => this.authService.setUser(user))
     );
   }
 

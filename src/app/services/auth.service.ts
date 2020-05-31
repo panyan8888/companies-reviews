@@ -32,15 +32,17 @@ export class AuthService {
           password: null,
         } as IUser;
       }),
-      tap(user => {
-        this.user = user;
-        window.localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
-      }),
+      tap(user => this.setUser(user)),
     );
   }
 
+  setUser(user: IUser): void {
+    this.user = user;
+    window.localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user));
+  }
+
   signOut(): void {
+    this.setUser(null);
     window.localStorage.clear();
-    this.user = null;
   }
 }
