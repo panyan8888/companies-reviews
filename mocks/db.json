@@ -105,6 +105,30 @@
       "category": "IT",
       "product": "ITProduct",
       "id": 9
+    },
+    {
+      "email": "armen@gmail.com",
+      "password": "555555",
+      "confpass": "555555",
+      "username": "tiran",
+      "role": "Company",
+      "name": "Tigran Panyan",
+      "address": "Mashtots ave",
+      "category": "IT",
+      "product": "ITProduct",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "review": "this is my first review\n  ",
+      "score": "3",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "review": "this is my first review\n  ",
+      "score": "3",
+      "id": 12
     }
   ],
   "reviews": [
@@ -114,6 +138,12 @@
       "companyId": 2,
       "review": "text",
       "score": 5
+    },
+    {
+      "userId": 1,
+      "review": "\n  this is my first review",
+      "score": "3",
+      "id": 2
     }
   ]
 }

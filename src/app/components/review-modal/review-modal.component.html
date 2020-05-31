@@ -1,1 +1,16 @@
+
+<div class="category">
+  <select (change)="onChangeScore($event.target.value)"
+          name="scoreType"
+          id="scoreType">
+    <option [value]="score.S1">1</option>
+    <option [value]="score.S2">2</option>
+    <option [value]="score.S3">3</option>
+    <option [value]="score.S4">4</option>
+    <option [value]="score.S5">5</option>
+  </select>
+  <textarea (change)="onChangeReview($event.target.value)" class="company-review" name="review">
+
+  </textarea>
+</div>
 <button (click)="submit()">Submit</button>

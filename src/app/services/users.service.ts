@@ -8,7 +8,6 @@ import {Observable, throwError} from "rxjs";
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   private baseUrl = `http://localhost:${environment.serverPort}/users`;
-  dbData: any;
 
   constructor(private client: HttpClient) {
   }
