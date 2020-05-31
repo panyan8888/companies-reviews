@@ -2,6 +2,9 @@
   <div class="title">
     <span>Company Reviews</span>
   </div>
+  <div *ngIf="authService.loggedIn" class="profile-button">
+    <button type="button" (click)="userProfile()">Profile</button>
+  </div>
   <div *ngIf="authService.loggedIn" class="sign-out-button">
     <button type="button" (click)="signOut()">Sign Out</button>
   </div>

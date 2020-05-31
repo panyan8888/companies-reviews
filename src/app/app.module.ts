@@ -15,6 +15,7 @@ import { CompanyItemComponent } from './components/company-item/company-item.com
 import { ReviewItemComponent } from './components/review-item/review-item.component';
 import { ReviewModalComponent } from './components/review-modal/review-modal.component';
 import {defaultSimpleModalOptions, SimpleModalModule} from "ngx-simple-modal";
+import { SimpleUserItemComponent } from './components/simple-user-item/simple-user-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {defaultSimpleModalOptions, SimpleModalModule} from "ngx-simple-modal";
     PrifileComponent,
     CompanyItemComponent,
     ReviewItemComponent,
-    ReviewModalComponent
+    ReviewModalComponent,
+    SimpleUserItemComponent
   ],
   entryComponents: [
     ReviewModalComponent,

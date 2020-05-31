@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     if (this.isCompany) {
       this.getReviews();
+      console.log(this.reviewsService.getCompanyReview(this.authService.user.id));
     } else {
       this.getCompanies();
     }
@@ -37,6 +38,6 @@ export class MainComponent implements OnInit {
     this.usersService.getCompanies().subscribe(companies => this.companies = companies);
   }
   private getReviews(): void {
-
+    this.reviewsService.getCompanyReview(this.authService.user.id).subscribe(reviews => this.reviews = reviews);
   }
 }

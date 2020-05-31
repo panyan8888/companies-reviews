@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SimpleModalComponent} from "ngx-simple-modal";
 import {IReview, Score} from "../../models/IReview";
-import {Category} from "../../models/IUser";
+import {Category, IUser} from "../../models/IUser";
 import {AuthService} from "../../services/auth.service";
 import {ReviewsService} from "../../services/reviews.service";
 
@@ -12,6 +12,7 @@ import {ReviewsService} from "../../services/reviews.service";
 })
 export class ReviewModalComponent extends SimpleModalComponent<ReviewModalComponent, IReview> implements OnInit {
 
+  company: IUser;
   score = Score;
 
   result: IReview = {
@@ -28,6 +29,7 @@ export class ReviewModalComponent extends SimpleModalComponent<ReviewModalCompon
   }
 
   ngOnInit(): void {
+    this.result.companyId = this.company.id;
   }
   onChangeReview(searchValue: string) {
     this.result.review = searchValue;

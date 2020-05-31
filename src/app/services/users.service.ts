@@ -4,12 +4,15 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {switchMap} from "rxjs/operators";
 import {Observable, throwError} from "rxjs";
+import {AuthService} from "./auth.service";
+import {IReview} from "../models/IReview";
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
-  private baseUrl = `http://localhost:${environment.serverPort}/users`;
+  public baseUrl = `http://localhost:${environment.serverPort}/users`;
 
-  constructor(private client: HttpClient) {
+  constructor(private client: HttpClient,
+              private authService: AuthService) {
   }
 
   createUser(body: IUser) {
@@ -29,7 +32,23 @@ export class UsersService {
     );
   }
 
+  editUserInfo(body: IUser) {
+    return this.client.get(this.baseUrl).pipe(
+      switchMap((allUsers: IUser[]) => {
+
+        return this.client.put(this.baseUrl, {
+          ...body,
+          id: this.authService.user.id
+        });
+      })
+    );
+  }
+
   getCompanies(): Observable<IUser[]> {
     return this.client.get<IUser[]>(`${this.baseUrl}?role=${Role.company}`);
   }
+
+  // getReviews(): Observable<IReview[]> {
+  //   return this.client.get<IReview[]>(`${this.baseUrl}?role=${Role.company}`);
+  // }
 }

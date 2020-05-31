@@ -11,4 +11,5 @@ export interface IReview {
   userId: number;
   review: string;
   score: Score;
+  companyId: number;
 }

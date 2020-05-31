@@ -16,10 +16,14 @@ export class CompanyItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.company);
   }
 
   openModal(): void {
-    this.simpleModalService.addModal(ReviewModalComponent).subscribe();
+    this.simpleModalService.addModal(
+      ReviewModalComponent,
+      { company: this.company } as ReviewModalComponent,
+    ).subscribe();
   }
 
 }

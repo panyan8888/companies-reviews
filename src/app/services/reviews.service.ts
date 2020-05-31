@@ -1,9 +1,8 @@
 import {Injectable} from "@angular/core";
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {IUser} from "../models/IUser";
 import {switchMap} from "rxjs/operators";
-import {throwError} from "rxjs";
+import {Observable} from "rxjs";
 import {IReview} from "../models/IReview";
 
 @Injectable({ providedIn: 'root' })
@@ -25,5 +24,9 @@ export class ReviewsService {
         });
       })
     );
+  }
+
+  getCompanyReview(companyId: number): Observable<IReview[]> {
+    return this.client.get<IReview[]>(`${this.baseUrl}?companyId=${companyId}`);
   }
 }
