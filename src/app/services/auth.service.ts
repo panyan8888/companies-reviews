@@ -11,6 +11,7 @@ import {USER_STORAGE_KEY} from "../constants/storage.const";
 export class AuthService {
   private baseUrl = `http://localhost:${environment.serverPort}/users`;
   user: IUser;
+  signInError: boolean;
 
   get loggedIn(): boolean {
     return !!this.user;
@@ -25,6 +26,7 @@ export class AuthService {
       map(users => {
         const user = users[0];
         if (!user || user.password !== data.password) {
+          this.signInError = true;
           throw new Error('The email/password is invalid');
         }
         return {

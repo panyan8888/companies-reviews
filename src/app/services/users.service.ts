@@ -10,6 +10,7 @@ import {IReview} from "../models/IReview";
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   public baseUrl = `http://localhost:${environment.serverPort}/users`;
+  signUpError: boolean;
 
   constructor(private client: HttpClient,
               private authService: AuthService) {
@@ -20,6 +21,7 @@ export class UsersService {
       switchMap((allUsers: IUser[]) => {
         const emailExists = allUsers.some(user => user.email === body.email);
         if (emailExists) {
+          this.signUpError = true;
           return throwError(new Error('User with typed email already exists.'));
         }
         const lastUser = allUsers[allUsers.length - 1];

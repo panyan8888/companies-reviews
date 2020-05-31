@@ -1,20 +1,43 @@
 .sign-up{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   .title{
+    margin-bottom: 30px;
     span{
-
+      font-size: 30px;
     }
   }
   .sign-up-content{
     .sign-up-fields{
-
+      form{
+        >div{
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+      }
     }
   }
-}
-
-
-
-
-
-.error{
-  color: red;
+  .sign-up-button{
+    button{
+      outline: none;
+      &:hover{
+        cursor: pointer
+      }
+    }
+  }
+  .have-account{
+    span{
+      color: #0000FF;
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+  .error{
+    color: red;
+  }
 }

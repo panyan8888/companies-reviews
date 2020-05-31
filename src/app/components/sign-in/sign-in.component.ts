@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
   };
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router: Router,
   ) { }
 
@@ -31,12 +31,8 @@ export class SignInComponent implements OnInit {
     }
   }
 
-  onChangeEmail(searchValue: string) {
-    this.signInData.email = searchValue;
-  }
-
-  onChangePassword(searchValue: string) {
-    this.signInData.password = searchValue;
+  dontHaveAnAccount(): void {
+    this.router.navigate(['/auth/sign-up']);
   }
 
   signIn(): void {

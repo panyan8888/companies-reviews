@@ -1,19 +1,11 @@
 <div class="user-profile">
+  <div class="whole">
   <div class="email">
-    <span class="title">Email</span>
+    <span class="title">Email:</span>
     <span>{{this.authService.user.email}}</span>
   </div>
-<!--  <div class="password">-->
-<!--    <span class="title">Email</span>-->
-<!--    <span>{{this.authService.user.password}}}</span>-->
-<!--    <input-->
-<!--      (input) = "onChangePassword($event.target.value)"-->
-<!--      class="form-control password-input"-->
-<!--      type="text"-->
-<!--      placeholder="password">-->
-<!--  </div>-->
   <div class="username">
-    <span class="title">Username</span>
+    <span class="title">Username:</span>
     <span *ngIf="!editable">{{this.authService.user.username}}</span>
     <input
       *ngIf="editable"
@@ -24,19 +16,19 @@
       placeholder="username">
   </div>
   <div class="role">
-    <span class="title">Role</span>
+    <span class="title">Role:</span>
     <span *ngIf="!editable">{{this.authService.user.role}}</span>
     <select
       *ngIf="editable"
       [(ngModel)]="editInfoData.role"
-      name="role"
-      id="signinType">
+      (change)="onChangeRole($event.target.value)"
+      name="role">
       <option [value]="roles.user">User</option>
       <option [value]="roles.company">Company</option>
     </select>
   </div>
   <div *ngIf="companyUser || userToCompany" class="address">
-    <span class="title">Address</span>
+    <span class="title">Address:</span>
     <span *ngIf="!editable">{{this.authService.user.address}}</span>
     <input
       *ngIf="editable"
@@ -47,7 +39,7 @@
       placeholder="address">
   </div>
   <div *ngIf="companyUser || userToCompany" class="name">
-    <span class="title">Name</span>
+    <span class="title">Name:</span>
     <span *ngIf="!editable">{{this.authService.user.name}}</span>
     <input
       *ngIf="editable"
@@ -58,29 +50,28 @@
       placeholder="name">
   </div>
   <div *ngIf="companyUser || userToCompany" class="category">
-    <span class="title">Category</span>
+    <span class="title">Category:</span>
     <span *ngIf="!editable">{{this.authService.user.category}}</span>
     <select
       *ngIf="editable"
       [(ngModel)]="editInfoData.category"
-      name="category"
-      id="categoryType">
+      name="category">
       <option [value]="categories.IT">IT</option>
       <option [value]="categories.notIT">notIT</option>
     </select>
   </div>
   <div *ngIf="companyUser || userToCompany" class="product">
-    <span class="title">Product</span>
+    <span class="title">Product:</span>
     <span *ngIf="!editable">{{this.authService.user.product}}</span>
     <select
       *ngIf="editable"
       [(ngModel)]="editInfoData.product"
-      name="product"
-      id="productType">
+      name="product">
       <option [value]="products.ITProduct">ITProduct</option>
       <option [value]="products.notITProduct">notITProduct</option>
     </select>
   </div>
   <button *ngIf="showEditButton" (click)="editInfo()">Edit</button>
-  <button *ngIf="!showEditButton" (click)="saveInfo()">Edit</button>
+  <button *ngIf="!showEditButton" (click)="saveInfo()">Save</button>
+  </div>
 </div>

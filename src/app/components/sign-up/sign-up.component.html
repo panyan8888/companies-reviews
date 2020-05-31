@@ -52,9 +52,10 @@
         </div>
         <div class="role">
           <label for="role">Role</label>
-          <select [(ngModel)]="userData.role"
-                  name="signinType"
-                  id="signinType">
+          <select
+            [(ngModel)]="userData.role"
+            (change)="onChangeRole($event.target.value)"
+            name="role">
             <option [value]="roles.user">User</option>
             <option [value]="roles.company">Company</option>
           </select>
@@ -85,8 +86,7 @@
         <div *ngIf="showCompanyFields" class="category">
           <select
             [(ngModel)]="companyData.category"
-            name="email"
-            id="categoryType">
+            name="category">
             <option [value]="categories.IT">IT</option>
             <option [value]="categories.notIT">notIT</option>
           </select>
@@ -94,11 +94,16 @@
         <div *ngIf="showCompanyFields" class="product">
           <select
             [(ngModel)]="companyData.product"
-            name="emailproduct"
-            id="productType">
+            name="product">
             <option [value]="products.ITProduct">ITProduct</option>
             <option [value]="products.notITProduct">notITProduct</option>
           </select>
+        </div>
+        <div class="error">
+          <span *ngIf="this.usersService.signUpError">Invalid Credentials</span>
+        </div>
+        <div class="have-account">
+          <span (click)="haveAnAccount()">Sign In</span>
         </div>
         <div class="sign-up-button">
           <button (click)="signUp()" class="sign-up" type="button">Sign Up</button>

@@ -1,16 +1,28 @@
-
 <div class="category">
-  <select (change)="onChangeScore($event.target.value)"
-          name="scoreType"
-          id="scoreType">
-    <option [value]="score.S1">1</option>
-    <option [value]="score.S2">2</option>
-    <option [value]="score.S3">3</option>
-    <option [value]="score.S4">4</option>
-    <option [value]="score.S5">5</option>
-  </select>
-  <textarea (change)="onChangeReview($event.target.value)" class="company-review" name="review">
-
-  </textarea>
+  <div class="title">
+    <span>Review</span>
+  </div>
+  <div class="score">
+    <span>Score:</span>
+    <select
+      [(ngModel)]="result.score"
+      name="score">
+      <option [value]="score.S1">1</option>
+      <option [value]="score.S2">2</option>
+      <option [value]="score.S3">3</option>
+      <option [value]="score.S4">4</option>
+      <option [value]="score.S5">5</option>
+    </select>
+  </div>
+  <div class="leave-a-review">
+    <span>Leave a review:</span>
+    <textarea
+      [(ngModel)]="result.review"
+      name="review"
+      class="company-review">
+    </textarea>
+  </div>
+  <div class="save-button">
+    <button (click)="submit()">Submit</button>
+  </div>
 </div>
-<button (click)="submit()">Submit</button>

@@ -1,0 +1,34 @@
+.user-profile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .whole {
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        &:first-child {
+          margin-bottom: 5px;
+        }
+
+        &:last-child {
+          margin-bottom: 15px;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+
+      input, select {
+        margin-bottom: 15px;
+      }
+    }
+    button{
+      &:hover{
+        cursor: pointer;
+        outline: none;
+      }
+    }
+  }
+}

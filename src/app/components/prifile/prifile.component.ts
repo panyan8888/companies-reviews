@@ -61,27 +61,8 @@ export class PrifileComponent implements OnInit {
     this.showEditButton = true;
     this.editable = false;
   }
-
-  onChangeUsername(searchValue: string) {
-    this.editInfoData.username = searchValue;
-  }
-
-  onChangeAddress(searchValue: string) {
-    this.editInfoData.address = searchValue;
-  }
-
-  onChangeName(searchValue: string) {
-    this.editInfoData.name = searchValue;
-  }
   onChangeRole(searchValue: Role) {
-    this.editInfoData.role = searchValue;
     this.userToCompany = this.editInfoData.role === Role.company;
-  }
-  onChangeCategory(searchValue: Category) {
-    this.editInfoData.category = searchValue;
-  }
-  onChangeProduct(searchValue: Product) {
-    this.editInfoData.product = searchValue;
   }
 
 }

@@ -1,0 +1,45 @@
+.simple-user{
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  .company-score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    span{
+      text-align: center;
+      color: #ffffff;
+      &:first-child{
+        margin-bottom: 10px;
+      }
+      &:last-child{
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+  .company-review{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    span{
+      text-align: center;
+      color: #ffffff;
+      &:first-child{
+        margin-bottom: 10px;
+      }
+      &:last-child{
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}

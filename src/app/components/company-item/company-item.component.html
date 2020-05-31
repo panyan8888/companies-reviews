@@ -1,6 +1,13 @@
-<div>
-  <span>{{company.role}}</span>
-  <span>Owner-{{company.name}}</span>
-  <span>{{company.address}}</span>
-  <button (click)="openModal()">review</button>
+<div class="company-item">
+  <div class="company-owner">
+    <span>Company Owner</span>
+    <span>{{company.name}}</span>
+  </div>
+  <div class="company-address">
+    <span>Company Address</span>
+    <span>{{company.address}}</span>
+  </div>
+  <div class="review-button">
+    <button (click)="openModal()">review</button>
+  </div>
 </div>
