@@ -1,0 +1,22 @@
+.header{
+  background-color: #0000FF;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .title{
+    span{
+      font-size: 36px;
+      color: #ffffff;
+    }
+  }
+  .sign-out-button{
+    button{
+      outline: none;
+      padding: 5px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}

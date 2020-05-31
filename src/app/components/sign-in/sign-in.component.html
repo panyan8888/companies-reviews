@@ -1,0 +1,35 @@
+<div class="sign-ip">
+  <div class="title">
+    <span>Sign in</span>
+  </div>
+  <div class="sign-ip-content">
+    <div class="sign-in-fields">
+      <form role="form" (keydown)="keyDownFunction($event)">
+        <!-- for simple Users -->
+        <div class="email">
+          <input
+            required
+            (input) = "onChangeEmail($event.target.value)"
+            class="form-control email-input"
+            type="text"
+            placeholder="Email">
+        </div>
+        <div class="password">
+          <input
+            required
+            (input) = "onChangePassword($event.target.value)"
+            class="form-control password-input"
+            type="password"
+            placeholder="Password">
+        </div>
+        <div class="error">
+          <span *ngIf="noSuchUser" class="password-rule">Invalid Username or Password</span>
+        </div>
+        <div class="sign-up-button">
+          <button (click)="signIn()" class="sign-up" type="button">Sign In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

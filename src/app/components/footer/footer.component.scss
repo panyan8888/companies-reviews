@@ -1,0 +1,13 @@
+.footer{
+  background-color: #0000FF;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .title{
+    span{
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
+}

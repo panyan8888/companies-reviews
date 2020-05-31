@@ -1,24 +1,25 @@
 export enum Role {
-  user = 1,
-  company = 2,
+  user = 'User',
+  company = 'Company',
 }
 
 export enum Category {
-  IT = 1,
-  notIT = 2,
+  IT = 'IT',
+  notIT = 'notIT',
 }
 
 export enum Product {
-  ITProduct = 1,
-  notITProduct = 2,
+  ITProduct = 'ITProduct',
+  notITProduct = 'notITProduct',
 }
 
 export interface IUser {
-  id: number;
+  id?: number;
   email: string;
   password: string;
+  confpass: string;
   username: string;
-  role: Role;
+  role?: Role;
   address?: string;
   name?: string;
   category?: Category;

@@ -1,0 +1,8 @@
+<div class="header">
+  <div class="title">
+    <span>Company Reviews</span>
+  </div>
+  <div *ngIf="authService.loggedIn" class="sign-out-button">
+    <button type="button" (click)="signOut()">Sign Out</button>
+  </div>
+</div>

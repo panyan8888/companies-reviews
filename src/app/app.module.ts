@@ -3,16 +3,47 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {HttpClientModule} from "@angular/common/http";
+import {UsersService} from "./services/users.service";
+import { MainComponent } from './components/main/main.component';
+import { PrifileComponent } from './components/prifile/prifile.component';
+import { CompanyItemComponent } from './components/company-item/company-item.component';
+import { ReviewItemComponent } from './components/review-item/review-item.component';
+import { ReviewModalComponent } from './components/review-modal/review-modal.component';
+import {defaultSimpleModalOptions, SimpleModalModule} from "ngx-simple-modal";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    SignInComponent,
+    SignUpComponent,
+    MainComponent,
+    PrifileComponent,
+    CompanyItemComponent,
+    ReviewItemComponent,
+    ReviewModalComponent
+  ],
+  entryComponents: [
+    ReviewModalComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SimpleModalModule.forRoot({container: document.body}, {
+      ...defaultSimpleModalOptions,
+      closeOnEscape: true,
+      closeOnClickOutside: true,
+      animationDuration: 300,
+      autoFocus: true
+    }),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

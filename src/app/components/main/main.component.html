@@ -1,0 +1,8 @@
+<div class="lists-container">
+  <ng-container *ngIf="isCompany; else companiesList">
+<!--    reviews list -->
+  </ng-container>
+  <ng-template #companiesList>
+    <app-company-item *ngFor="let item of companies" [company]="item"></app-company-item>
+  </ng-template>
+</div>
