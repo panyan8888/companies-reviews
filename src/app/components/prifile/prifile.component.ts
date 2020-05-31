@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Category, IUser, Product, Role} from "../../models/IUser";
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
-import {UsersService} from "../../services/users.service";
+import {Category, IUser, Product, Role} from '../../models/IUser';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-prifile',

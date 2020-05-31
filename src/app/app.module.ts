@@ -7,16 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import {HttpClientModule} from "@angular/common/http";
-import {UsersService} from "./services/users.service";
+import {HttpClientModule} from '@angular/common/http';
 import { MainComponent } from './components/main/main.component';
 import { PrifileComponent } from './components/prifile/prifile.component';
 import { CompanyItemComponent } from './components/company-item/company-item.component';
 import { ReviewItemComponent } from './components/review-item/review-item.component';
 import { ReviewModalComponent } from './components/review-modal/review-modal.component';
-import {defaultSimpleModalOptions, SimpleModalModule} from "ngx-simple-modal";
+import {defaultSimpleModalOptions, SimpleModalModule} from 'ngx-simple-modal';
 import { SimpleUserItemComponent } from './components/simple-user-item/simple-user-item.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

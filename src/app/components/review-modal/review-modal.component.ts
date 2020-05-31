@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {SimpleModalComponent} from "ngx-simple-modal";
-import {IReview, Score} from "../../models/IReview";
-import {Category, IUser} from "../../models/IUser";
-import {AuthService} from "../../services/auth.service";
-import {ReviewsService} from "../../services/reviews.service";
+import {SimpleModalComponent} from 'ngx-simple-modal';
+import {IReview, Score} from '../../models/IReview';
+import {Category, IUser} from '../../models/IUser';
+import {AuthService} from '../../services/auth.service';
+import {ReviewsService} from '../../services/reviews.service';
 
 @Component({
   selector: 'app-review-modal',

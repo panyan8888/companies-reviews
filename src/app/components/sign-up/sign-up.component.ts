@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Category, IUser, Product, Role} from '../../models/IUser';
 import {UsersService} from '../../services/users.service';
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',

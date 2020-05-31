@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {ILoginData} from "../models/ILoginData";
-import {map, tap} from "rxjs/operators";
-import {IUser} from "../models/IUser";
-import {Observable, throwError} from "rxjs";
-import {USER_STORAGE_KEY} from "../constants/storage.const";
+import {ILoginData} from '../models/ILoginData';
+import {map, tap} from 'rxjs/operators';
+import {IUser} from '../models/IUser';
+import {Observable} from 'rxjs';
+import {USER_STORAGE_KEY} from '../constants/storage.const';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {

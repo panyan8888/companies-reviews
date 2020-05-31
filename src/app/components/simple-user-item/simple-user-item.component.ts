@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IUser} from "../../models/IUser";
-import {IReview} from "../../models/IReview";
+import {IReview} from '../../models/IReview';
 
 @Component({
   selector: 'app-simple-user-item',

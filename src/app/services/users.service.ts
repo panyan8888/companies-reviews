@@ -2,10 +2,9 @@ import {Injectable} from '@angular/core';
 import {IUser, Role} from '../models/IUser';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {switchMap, tap} from "rxjs/operators";
-import {Observable, throwError} from "rxjs";
-import {AuthService} from "./auth.service";
-import {IReview} from "../models/IReview";
+import {switchMap, tap} from 'rxjs/operators';
+import {Observable, throwError} from 'rxjs';
+import {AuthService} from './auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
@@ -43,8 +42,4 @@ export class UsersService {
   getCompanies(): Observable<IUser[]> {
     return this.client.get<IUser[]>(`${this.baseUrl}?role=${Role.company}`);
   }
-
-  // getReviews(): Observable<IReview[]> {
-  //   return this.client.get<IReview[]>(`${this.baseUrl}?role=${Role.company}`);
-  // }
 }

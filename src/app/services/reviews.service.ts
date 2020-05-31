@@ -1,9 +1,9 @@
-import {Injectable} from "@angular/core";
-import {environment} from "../../environments/environment";
-import {HttpClient} from "@angular/common/http";
-import {switchMap} from "rxjs/operators";
-import {Observable} from "rxjs";
-import {IReview} from "../models/IReview";
+import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {IReview} from '../models/IReview';
 
 @Injectable({ providedIn: 'root' })
 

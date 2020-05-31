@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../../services/auth.service";
-import {IUser, Role} from "../../models/IUser";
-import {UsersService} from "../../services/users.service";
-import {ReviewsService} from "../../services/reviews.service";
-import {IReview} from "../../models/IReview";
+import {AuthService} from '../../services/auth.service';
+import {IUser, Role} from '../../models/IUser';
+import {UsersService} from '../../services/users.service';
+import {ReviewsService} from '../../services/reviews.service';
+import {IReview} from '../../models/IReview';
 
 @Component({
   selector: 'app-main',
