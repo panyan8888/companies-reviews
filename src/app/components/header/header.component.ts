@@ -21,6 +21,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([ '/main/profile' ]);
   }
 
+  goToMainPage(): void {
+    this.router.navigate([ '/main' ]);
+  }
+
   signOut(): void {
     this.authService.signOut();
     this.router.navigate([ '/' ]);

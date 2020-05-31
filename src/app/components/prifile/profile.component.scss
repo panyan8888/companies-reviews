@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .whole {
+  .wrapper {
     > div {
       display: flex;
       flex-direction: column;
@@ -25,6 +25,9 @@
       }
     }
     button{
+      &:last-child {
+        margin-left: 10px;
+      }
       &:hover{
         cursor: pointer;
         outline: none;

@@ -11,14 +11,13 @@ import {ReviewsService} from '../../services/reviews.service';
   styleUrls: ['./review-modal.component.scss']
 })
 export class ReviewModalComponent extends SimpleModalComponent<ReviewModalComponent, IReview> implements OnInit {
-
   company: IUser;
   score = Score;
 
   result: IReview = {
     userId: this.authService.user.id,
-    review: 'adsfasdf',
-    score: 5,
+    review: null,
+    score: null,
   } as IReview;
 
   constructor(
@@ -31,17 +30,12 @@ export class ReviewModalComponent extends SimpleModalComponent<ReviewModalCompon
   ngOnInit(): void {
     this.result.companyId = this.company.id;
   }
-  onChangeReview(searchValue: string) {
-    this.result.review = searchValue;
-  }
-  onChangeScore(searchValue: Score) {
-    this.result.score = searchValue;
-  }
 
   submit(): void {
     this.reviewsService.saveReview(this.result).subscribe(resp => {
-      console.log(resp);
+      if (resp) {
+        this.close();
+      }
     });
-    this.close();
   }
 }

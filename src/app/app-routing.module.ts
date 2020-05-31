@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {SignInComponent} from './components/sign-in/sign-in.component';
 import {SignUpComponent} from './components/sign-up/sign-up.component';
 import {MainComponent} from './components/main/main.component';
-import {PrifileComponent} from './components/prifile/prifile.component';
+import {ProfileComponent} from './components/prifile/profile.component';
 import {AuthGuard} from './services/auth.guard';
 
 
@@ -44,7 +44,7 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        component: PrifileComponent,
+        component: ProfileComponent,
         canActivate: [AuthGuard]
       },
     ]

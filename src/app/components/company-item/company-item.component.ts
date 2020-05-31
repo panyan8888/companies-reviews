@@ -16,7 +16,6 @@ export class CompanyItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.company);
   }
 
   openModal(): void {

@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Category, IUser, Product, Role} from '../../models/IUser';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {UsersService} from '../../services/users.service';
 
 @Component({
-  selector: 'app-prifile',
-  templateUrl: './prifile.component.html',
-  styleUrls: ['./prifile.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class PrifileComponent implements OnInit {
-
+export class ProfileComponent implements OnInit {
   showEditButton = true;
   editable = false;
   simpleUser: boolean;
@@ -50,16 +49,18 @@ export class PrifileComponent implements OnInit {
     this.showEditButton = false;
     this.editable = true;
   }
-
-  saveInfo(): void {
-    console.log(this.editInfoData);
-    this.usersService.editUserInfo(this.editInfoData).subscribe(user => {
-      if (user) {
-        this.router.navigate([ '/main' ]);
-      }
-    });
+  cancel(): void {
     this.showEditButton = true;
     this.editable = false;
+  }
+
+  saveInfo(): void {
+    this.usersService.editUserInfo(this.editInfoData).subscribe(user => {
+      if (user) {
+        this.showEditButton = true;
+        this.editable = false;
+      }
+    });
   }
   onChangeRole(searchValue: Role) {
     this.userToCompany = this.editInfoData.role === Role.company;

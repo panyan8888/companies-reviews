@@ -28,7 +28,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     if (this.isCompany) {
       this.getReviews();
-      console.log(this.reviewsService.getCompanyReview(this.authService.user.id));
     } else {
       this.getCompanies();
     }

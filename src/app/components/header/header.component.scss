@@ -6,8 +6,17 @@
   align-items: center;
   .title{
     span{
-      font-size: 36px;
-      color: #ffffff;
+      &:first-child {
+        font-size: 36px;
+        color: #ffffff;
+      }
+      &:last-child{
+        margin-left: 10px;
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
   }
   .sign-out-button, .profile-button{

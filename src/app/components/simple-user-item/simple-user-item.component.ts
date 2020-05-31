@@ -12,7 +12,5 @@ export class SimpleUserItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.simpleUser);
   }
-
 }

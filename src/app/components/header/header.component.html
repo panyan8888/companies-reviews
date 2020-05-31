@@ -1,6 +1,7 @@
 <div class="header">
   <div class="title">
     <span>Company Reviews</span>
+    <span (click)="goToMainPage()">Main</span>
   </div>
   <div *ngIf="authService.loggedIn" class="profile-button">
     <button type="button" (click)="userProfile()">Profile</button>

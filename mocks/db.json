@@ -1,198 +1,49 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "panyan8888@gmail.com",
+      "email": "panyan88@gmail.com",
       "password": "111111",
       "username": "panyan88",
-      "role": 1,
-      "address": null,
-      "name": null,
-      "category": null,
-      "product": null
+      "role": "User",
+      "id": 1
     },
     {
-      "id": 2,
-      "email": "pan8888@gmail.com",
+      "email": "panyan8888@gmail.com",
       "password": "111111",
-      "username": "panyan888",
-      "role": 2,
-      "address": null,
-      "name": null,
-      "category": null,
-      "product": null
+      "username": "panyan8888",
+      "role": "Company",
+      "name": "Armen Panyan",
+      "address": "950 Ridge RD C25",
+      "category": "IT",
+      "product": "ITProduct",
+      "id": 2
     },
     {
-      "id": 3,
-      "email": "pan@gmail.com",
-      "password": "555555",
-      "confpass": "555555",
-      "username": "pan677",
+      "email": "khurshudyan@ysu.am",
+      "password": "111111",
+      "username": "asaturkhur",
       "role": "Company",
       "name": "Asatur Khurshudyan",
       "address": "950 Ridge RD C25",
       "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "id": 4,
-      "email": "panyan8889@gmail.com",
-      "password": "888888",
-      "confpass": "888888",
-      "username": "panyan777",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "id": 5,
-      "email": "panyan999@mail.com",
-      "password": "222222",
-      "confpass": "222222",
-      "username": "panyan776",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "id": 6,
-      "email": "asdfasdf@asdfasd.com",
-      "password": "111111",
-      "confpass": "111111",
-      "username": "asdfasdf",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "id": 7,
-      "email": "pan@gmail.com",
-      "password": "asdfasdf",
-      "confpass": "asdfasdf",
-      "username": "asdfaaaa",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "id": 8,
-      "email": "pan@gmail.com",
-      "password": "asdfasdf",
-      "confpass": "asdfasdf",
-      "username": "asdfasdf",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct"
-    },
-    {
-      "email": "hospogh@gmail.com",
-      "password": null,
-      "confpass": "111111",
-      "username": "hospogh",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
       "product": "ITProduct",
-      "id": 9
-    },
-    {
-      "email": "armen@gmail.com",
-      "password": "555555",
-      "confpass": "555555",
-      "username": "tiran",
-      "role": "Company",
-      "name": "Tigran Panyan",
-      "address": "Mashtots ave",
-      "category": "IT",
-      "product": "ITProduct",
-      "id": 10
-    },
-    {
-      "userId": 1,
-      "review": "this is my first review\n  ",
-      "score": "3",
-      "id": 11
-    },
-    {
-      "userId": 1,
-      "review": "this is my first review\n  ",
-      "score": "3",
-      "id": 12
-    },
-    {
-      "email": "valodik@mail.ru",
-      "password": "333333",
-      "confpass": "333333",
-      "username": "dfdfdfdf",
-      "role": "User",
-      "name": "",
-      "address": "",
-      "category": "IT",
-      "product": "ITProduct",
-      "id": 13
-    },
-    {
-      "email": "hosss@gmail.com",
-      "password": "111111",
-      "confpass": "111111",
-      "username": "hosss",
-      "role": "User",
-      "id": 14
-    },
-    {
-      "email": "khuaaa@adsfasd.scom",
-      "password": "asdfasdf",
-      "username": "asdfasdfasdf",
-      "role": "User",
-      "id": 15
+      "id": 3
     }
   ],
   "reviews": [
     {
       "userId": 1,
-      "review": "\n  d",
-      "score": 5,
-      "companyId": 1,
+      "review": "It's good company",
+      "score": "5",
+      "companyId": 2,
       "id": 1
     },
     {
       "userId": 1,
-      "review": "\n  d",
-      "score": 5,
-      "companyId": 1,
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "review": "s\n  ",
-      "score": 5,
-      "companyId": 1,
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "review": "asdfasdf\n  ",
-      "score": "3",
+      "review": "Very good company",
+      "score": "5",
       "companyId": 3,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "review": "\n  adsfasdfsadf",
-      "score": 5,
-      "companyId": 10,
-      "id": 5
+      "id": 2
     }
   ]
 }
